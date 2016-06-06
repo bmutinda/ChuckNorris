@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.bmutinda.chucknorris.R;
 import com.bmutinda.chucknorris.callbacks.ListFetchCallback;
@@ -20,7 +21,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.data_view_pager) ViewPager viewPager;
+    @Bind(R.id.data_viewpager) ViewPager viewPager;
     @Bind(R.id.tabs) TabLayout tabLayout;
 
     CategoriesPagerAdapter adapter;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         ButterKnife.bind(this);
 
         loadCategories();
