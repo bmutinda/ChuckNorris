@@ -1,6 +1,8 @@
 package com.bmutinda.chucknorris.models;
 
-public class Category {
+import com.orm.SugarRecord;
+
+public class Category extends SugarRecord {
 
     String name;
 
@@ -11,8 +13,17 @@ public class Category {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString(){
         return this.name;
     }
+
 }
